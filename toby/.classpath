@@ -7,5 +7,14 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-java-8.0.22.jar"/>
+	<classpathentry kind="lib" path="JARs for tobe spring 1.5 spring IoC/cglib-3.2.5.jar"/>
+	<classpathentry kind="lib" path="JARs for tobe spring 1.5 spring IoC/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="JARs for tobe spring 1.5 spring IoC/spring-aop-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="JARs for tobe spring 1.5 spring IoC/spring-asm-3.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="JARs for tobe spring 1.5 spring IoC/spring-beans-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="JARs for tobe spring 1.5 spring IoC/spring-context-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="JARs for tobe spring 1.5 spring IoC/spring-core-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="JARs for tobe spring 1.5 spring IoC/spring-expression-5.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="JARs for tobe spring 1.5 spring IoC/spring-expression-5.1.4.RELEASE (1).jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
