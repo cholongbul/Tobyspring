@@ -5,19 +5,20 @@ import java.sql.SQLException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import springbook.user.ex1.domain.User;
+import springbook.user.ex8.domain.User;
 //애플리케이션 컨텍스트를 적용한 UserDaoTest
 public class UserDaoTest {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		//애플리케이션 컨텍스트를 적용
-		ApplicationContext context = new AnnotationConfigApplicationContext(DaoFactory.class);
+		ApplicationContext context = 
+				new AnnotationConfigApplicationContext(DaoFactory.class);
 		
 		
 		UserDao dao = context.getBean("userDao", UserDao.class);
 		
 		User user = new User();
-		user.setId("cholong");
+		user.setId("cholong4");
 		user.setName("초롱불");
 		user.setPassword("greenlight");
 		
