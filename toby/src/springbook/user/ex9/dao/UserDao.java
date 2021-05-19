@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import springbook.user.ex8.domain.User;
+import springbook.user.domain.User;
 //싱글톤 패턴을 적용한 UserDao
 public class UserDao {
 	

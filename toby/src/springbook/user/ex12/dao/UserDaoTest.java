@@ -6,7 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import springbook.user.ex12.dao.DaoFactory;
-import springbook.user.ex8.domain.User;
+import springbook.user.domain.User;
 //애플리케이션 컨텍스트를 적용한 UserDaoTest
 public class UserDaoTest {
 

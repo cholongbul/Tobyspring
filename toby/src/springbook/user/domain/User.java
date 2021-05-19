@@ -1,4 +1,4 @@
-package springbook.user.ex8.domain;
+package springbook.user.domain;
 
 public class User {
 	

@@ -6,7 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import springbook.user.ex8.domain.User;
+import springbook.user.domain.User;
 
 //싱글톤 레지스트리 확인 테스트
 public class UserDaoTest2 {

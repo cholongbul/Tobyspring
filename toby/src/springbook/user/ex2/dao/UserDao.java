@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import springbook.user.ex1.domain.User;
+import springbook.user.domain.User;
 //중복 코드의 메소드 추출 
 public class UserDao {
 	

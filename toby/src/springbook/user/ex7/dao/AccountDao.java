@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import springbook.user.ex1.domain.User;
+import springbook.user.domain.User;
 //DAO의 확장-인터페이스의 도입
 public class AccountDao {
 	

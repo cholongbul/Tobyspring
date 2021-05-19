@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import springbook.user.ex8.domain.User;
+import springbook.user.domain.User;
 //DI(의존관계 주입) 설명 세가지 조건
 //클래스 모델이나 코드에는 런타임 시점의 의존관계가 드러나지 않는다. 그러기 위해서는 인터페이스에만 의존하고 있어야 한다.
 //런타임 시점의 의존관계는 컨테이너나 팩토리 같은 제 3의 존재가 결정한다.

@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import springbook.user.ex1.domain.User;
+import springbook.user.domain.User;
 //상속의 통한 확장
 public abstract class UserDao {
 	

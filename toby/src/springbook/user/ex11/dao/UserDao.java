@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import springbook.user.ex8.domain.User;
+import springbook.user.domain.User;
 //수정자 메소드 DI 적용
 public class UserDao {
 	
