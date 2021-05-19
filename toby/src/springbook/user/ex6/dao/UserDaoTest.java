@@ -7,7 +7,11 @@ import springbook.user.domain.User;
 public class UserDaoTest {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
-		UserDao dao = new DaoFactory().userDao();//팩토리를 사용하도록 수정
+
+		ConnectionMaker connectionMaker = new DConnectionMaker();
+
+		
+		UserDao dao = new UserDao(connectionMaker);
 		
 		User user = new User();
 		user.setId("cholong");

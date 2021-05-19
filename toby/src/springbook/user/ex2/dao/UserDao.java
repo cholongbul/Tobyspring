@@ -13,6 +13,11 @@ public class UserDao {
 	
 	public void add(User user) throws ClassNotFoundException, SQLException{
 		
+//		Class.forName("com.mysql.jdbc.Driver");
+//		Connection c = DriverManager.getConnection(
+//				"jdbc:mysql://localhost:3306/springbook?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&useUnicode=true&characterEncoding=UTF8&", "root", "1234");
+//		관심사가 다른 중복 코드
+		
 		Connection c =getConnection();
 		
 		PreparedStatement ps = c.prepareStatement(
@@ -29,6 +34,11 @@ public class UserDao {
 	}
 	
 	public User get(String id) throws ClassNotFoundException, SQLException {
+		
+//		Class.forName("com.mysql.jdbc.Driver");
+//		Connection c = DriverManager.getConnection(
+//				"jdbc:mysql://localhost:3306/springbook?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&useUnicode=true&characterEncoding=UTF8&", "root", "1234");
+//		관심사가 다른 중복 코드
 		
 		Connection c =getConnection();
 		
