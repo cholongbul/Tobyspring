@@ -13,7 +13,7 @@ public class DaoFactory {
 //	public MessageDao messageDao() {
 //		return new MessageDao(new DConnectionMaker());
 //	}
-//위의 코드는 매번 DConnectionMaker를 생성하기에 좋지 않다.
+////위의 코드는 매번 DConnectionMaker를 생성하기에 좋지 않다.
 	
 	public UserDao userDao() {
 		return new UserDao(connectionMaker());
