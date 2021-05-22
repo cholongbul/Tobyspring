@@ -11,8 +11,8 @@ import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 public class DaoFactory {
 
 	@Bean 
-	public UserDao userDao() {
-		UserDao userDao = new UserDaoDeleteAll(); 
+	public UserDaoJdbc userDao() {
+		UserDaoJdbc userDao = new UserDaoDeleteAll(); 
 		userDao.setDataSource(dataSource());//수정자 메소드 주입
 		return userDao;
 	}

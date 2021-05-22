@@ -12,7 +12,7 @@ import org.junit.Test;
 public class CalcSumTest {
 	Calculator calculator;
 	String numFilepath;
-	UserDao dao;
+	UserDaoJdbc dao;
 	
 	@Before 
 	public void setUp() {

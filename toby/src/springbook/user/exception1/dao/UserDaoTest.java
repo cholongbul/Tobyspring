@@ -3,30 +3,32 @@ package springbook.user.exception1.dao;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import springbook.user.domain.User;
-
+@RunWith(SpringJUnit4ClassRunner.class)//스프링-테스트 프레임워크의 JUnit 확장기능 지정
+@ContextConfiguration(locations="/springbook/user/exception1/dao/applicationContext.xml")
 public class UserDaoTest {
 	
-	private UserDao dao;//setup() 메소드에서 만드는 오브젝트를 테스트 메소드에서 사용할 수 있도록 인스턴스 변수로 선언
+
+	@Autowired
+	UserDao dao;//직접 주입
+	
 	private User user1; //주로 사용하는 오브젝트 픽스처 적용
 	private User user2;
 	private User user3;
-
 	
 	@Before //JUnit이 제공하는 애노테이션, @Test 메소드가 실행되기 전에 먼저 실행돼야 하는 메소드를 정의한다.
 	public void setUp() {
-		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml", UserDao.class);
-		this.dao = context.getBean("userDao", UserDao.class);
 		this.user1 = new User("cho1", "초롱불1", "greenligh1");
 		this.user2 = new User("cho2", "초롱불2", "greenligh2");
 		this.user3 = new User("cho3", "초롱불3", "greenligh3");
@@ -100,38 +102,12 @@ public class UserDaoTest {
 		dao.get("unknown_id");
 	}
 	
-	@Test
-	public void getAll() throws IOException {
+	@Test(expected=DataAccessException.class)
+	public void duplicateKey() {
 		dao.deleteAll();
 		
 		dao.add(user1);
-		List<User> users1 = dao.getAll();
-		assertThat(users1.size(), is(1));
-		checkSameUser(user1, users1.get(0));
-		
-		dao.add(user2);
-		List<User> users2 = dao.getAll();
-		assertThat(users2.size(), is(2));
-		checkSameUser(user1, users2.get(0));
-		checkSameUser(user2, users2.get(1));
-		
-		dao.add(user3);
-		List<User> users3 = dao.getAll();
-		assertThat(users3.size(), is(3));
-		checkSameUser(user1, users3.get(0));
-		checkSameUser(user2, users3.get(1));
-		checkSameUser(user3, users3.get(2));
-
-
-		
-		
-	}
-
-	private void checkSameUser(User user1, User user2) {
-		assertThat(user1.getId(), is(user2.getId()));
-		assertThat(user1.getName(), is(user2.getName()));
-		assertThat(user1.getPassword(), is(user2.getPassword()));
-
+		dao.add(user1);
 	}
 	
 }

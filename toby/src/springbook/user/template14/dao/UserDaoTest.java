@@ -9,14 +9,20 @@ import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import springbook.user.domain.User;
-
+@RunWith(SpringJUnit4ClassRunner.class)//스프링-테스트 프레임워크의 JUnit 확장기능 지정
+@ContextConfiguration(locations="/springbook/user/template14/dao/applicationContext.xml")//별도로 test-applicationContext.xml을 만들어서 활용
 public class UserDaoTest {
 	
+	@Autowired
 	private UserDao dao;//setup() 메소드에서 만드는 오브젝트를 테스트 메소드에서 사용할 수 있도록 인스턴스 변수로 선언
 	private User user1; //주로 사용하는 오브젝트 픽스처 적용
 	private User user2;
@@ -25,8 +31,8 @@ public class UserDaoTest {
 	
 	@Before //JUnit이 제공하는 애노테이션, @Test 메소드가 실행되기 전에 먼저 실행돼야 하는 메소드를 정의한다.
 	public void setUp() {
-		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml", UserDao.class);
-		this.dao = context.getBean("userDao", UserDao.class);
+
+		
 		this.user1 = new User("cho1", "초롱불1", "greenligh1");
 		this.user2 = new User("cho2", "초롱불2", "greenligh2");
 		this.user3 = new User("cho3", "초롱불3", "greenligh3");
